@@ -6,6 +6,8 @@ import com.niuchaoqun.pubsub.EmitLog;
 import com.niuchaoqun.pubsub.RecvLog;
 import com.niuchaoqun.routing.EmitDirect;
 import com.niuchaoqun.routing.RecvDirect;
+import com.niuchaoqun.topic.EmitTopic;
+import com.niuchaoqun.topic.RecvTopic;
 import com.niuchaoqun.work.Task;
 import com.niuchaoqun.work.Worker;
 import org.slf4j.Logger;
@@ -35,6 +37,8 @@ public class App {
             pd.addClass("pubsub-recv", RecvLog.class, "pubsub recv example");
             pd.addClass("routing-emit", EmitDirect.class, "routing emit example");
             pd.addClass("routing-recv", RecvDirect.class, "routing recv example");
+            pd.addClass("topic-emit", EmitTopic.class, "topic emit example");
+            pd.addClass("topic-recv", RecvTopic.class, "topic recv example");
 
             exitCode = pd.run(args, 0);
         } catch (Throwable e) {

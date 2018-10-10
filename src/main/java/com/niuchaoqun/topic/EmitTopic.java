@@ -1,4 +1,4 @@
-package com.niuchaoqun.routing;
+package com.niuchaoqun.topic;
 
 import com.rabbitmq.client.*;
 
@@ -8,16 +8,18 @@ import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeoutException;
 
 /**
- * 路由模式，发送端，使用 redirect exchange
+ * 主题模式，发送端。使用 topic exchange
  * <p>
- * 发布订阅模式的局限在于，只能进行无意识的广播，不能进行选择
+ * 扩展了直接模式，可以使用通配符定义 routingkey
  *
  * @author niuchaoqun
  */
-public class EmitDirect {
-    public static final String EXCHANGE_NAME = "direct_logs";
+public class EmitTopic {
+
+    public static final String EXCHANGE_NAME = "top_logs";
 
     public static void run(String[] args) throws IOException, TimeoutException {
+
         String datetime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
         ConnectionFactory factory = new ConnectionFactory();
@@ -27,7 +29,7 @@ public class EmitDirect {
         Channel channel = connection.createChannel();
 
         // 声明 exchange，并持久化
-        channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT, true);
+        channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.TOPIC, true);
 
         String routingKey = getSeverity(args);
         String message = getMessage(args) + " " + datetime;
@@ -43,7 +45,7 @@ public class EmitDirect {
 
     private static String getSeverity(String[] strings) {
         if (strings.length < 1) {
-            return "info";
+            return "anonymous.info";
         }
 
         return strings[0];
@@ -71,4 +73,5 @@ public class EmitDirect {
         }
         return words.toString();
     }
+
 }
