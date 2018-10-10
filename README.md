@@ -59,8 +59,8 @@ RabbitMQ 3.7.4 + Erlang 20.3.*
 
 参考：http://www.rabbitmq.com/tutorials/tutorial-four-java.html
 
-* routing-emit
-* routing-recv
+* direct-emit
+* direct-recv
 
 ## 主题模式
 

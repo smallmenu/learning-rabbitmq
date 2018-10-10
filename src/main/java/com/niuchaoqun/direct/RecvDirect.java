@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 /**
- * 路由模式，使用 redirect exchange
+ * 直接（路由）模式，使用 redirect exchange
  *
  * @author niuchaoqun
  */

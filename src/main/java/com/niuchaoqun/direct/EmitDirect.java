@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeoutException;
 
 /**
- * 路由模式，发送端，使用 redirect exchange
+ * 直接（路由）模式，发送端，使用 redirect exchange
  * <p>
  * 发布订阅模式的局限在于，只能进行无意识的广播，不能进行选择
  *
