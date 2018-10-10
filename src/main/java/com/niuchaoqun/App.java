@@ -4,8 +4,8 @@ import com.niuchaoqun.hello.Recv;
 import com.niuchaoqun.hello.Send;
 import com.niuchaoqun.pubsub.EmitLog;
 import com.niuchaoqun.pubsub.RecvLog;
-import com.niuchaoqun.routing.EmitDirect;
-import com.niuchaoqun.routing.RecvDirect;
+import com.niuchaoqun.direct.EmitDirect;
+import com.niuchaoqun.direct.RecvDirect;
 import com.niuchaoqun.topic.EmitTopic;
 import com.niuchaoqun.topic.RecvTopic;
 import com.niuchaoqun.work.Task;
@@ -35,8 +35,8 @@ public class App {
             pd.addClass("work-worker", Worker.class, "work worker example");
             pd.addClass("pubsub-emit", EmitLog.class, "pubsub emit example");
             pd.addClass("pubsub-recv", RecvLog.class, "pubsub recv example");
-            pd.addClass("routing-emit", EmitDirect.class, "routing emit example");
-            pd.addClass("routing-recv", RecvDirect.class, "routing recv example");
+            pd.addClass("direct-emit", EmitDirect.class, "direct emit example");
+            pd.addClass("direct-recv", RecvDirect.class, "direct recv example");
             pd.addClass("topic-emit", EmitTopic.class, "topic emit example");
             pd.addClass("topic-recv", RecvTopic.class, "topic recv example");
 

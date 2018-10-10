@@ -1,4 +1,4 @@
-package com.niuchaoqun.routing;
+package com.niuchaoqun.direct;
 
 import com.rabbitmq.client.*;
 
@@ -27,7 +27,7 @@ public class RecvDirect {
         String queueName = channel.queueDeclare().getQueue();
 
         if (args.length < 1) {
-            System.err.println("Usage: routing-recv [info] [warning] [error]");
+            System.err.println("Usage: direct-recv [info] [warning] [error]");
             System.exit(1);
         }
 

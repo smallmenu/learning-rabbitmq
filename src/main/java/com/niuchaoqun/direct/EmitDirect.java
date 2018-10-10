@@ -1,4 +1,4 @@
-package com.niuchaoqun.routing;
+package com.niuchaoqun.direct;
 
 import com.rabbitmq.client.*;
 

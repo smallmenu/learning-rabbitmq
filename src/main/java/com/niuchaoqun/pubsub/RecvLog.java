@@ -27,7 +27,6 @@ public class RecvLog {
         //String queueName = channel.queueDeclare("share", true, false, false, null).getQueue();
         String queueName = channel.queueDeclare().getQueue();
 
-
         // 将队列和 exchange 绑定在一起，表示队列对此 exchange 感兴趣
         channel.queueBind(queueName, EXCHANGE_NAME, "");
 
