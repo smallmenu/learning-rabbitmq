@@ -8,7 +8,7 @@ RabbitMQ 3.7.4 + Erlang 20.3.*
 
 * Virtual Host。RabbitMQ 支持配置多 vhost 虚拟主机功能，每一个 vhost 就相当于一个 Mini RabbitMQ，均拥有着属于自己的队列、交换机和绑定。而且不同 vhost 之间的命名空间彼此独立、互相隔离，有效的解决了命名冲突的问题
 * Exchange。理解为交换机，是消息到达的第一站，并根据 Binding 规则将消息路由给队列。ExchangeType 决定了 Exchange 路由消息的行为，在RabbitMQ中，有 Direct、Fanout和 Topic 三种
-* Queue。队列，用于存放消息
+* Queue。队列，用于存放消息，每个消息会被投递到一个或多个队列中。
 
 ### 简单队列
 
