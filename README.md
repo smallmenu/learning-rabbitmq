@@ -68,7 +68,7 @@ RabbitMQ 3.7.4 + Erlang 20.3.*
 * direct-emit
 * direct-recv
 
-## 主题模式
+### 主题模式
 
 使用 Topic Exchange，通过 routringkey 的模糊匹配来实现路由的分发。
 
