@@ -81,6 +81,13 @@ RabbitMQ 3.7.4 + Erlang 20.3.*
 * topic-emit
 * topic-recv
 
+## 测试
+
+接收端，通过线程池多线程处理消息的示例
+
+* test-batch-send
+* test-pool-recv
+
 ## 集成 Springboot
 
 参考我的另一个项目：

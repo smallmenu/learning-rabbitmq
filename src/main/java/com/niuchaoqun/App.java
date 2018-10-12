@@ -6,6 +6,8 @@ import com.niuchaoqun.pubsub.EmitLog;
 import com.niuchaoqun.pubsub.RecvLog;
 import com.niuchaoqun.direct.EmitDirect;
 import com.niuchaoqun.direct.RecvDirect;
+import com.niuchaoqun.test.TestBatchSend;
+import com.niuchaoqun.test.TestPoolRecv;
 import com.niuchaoqun.topic.EmitTopic;
 import com.niuchaoqun.topic.RecvTopic;
 import com.niuchaoqun.work.Task;
@@ -39,6 +41,8 @@ public class App {
             pd.addClass("direct-recv", RecvDirect.class, "direct recv example");
             pd.addClass("topic-emit", EmitTopic.class, "topic emit example");
             pd.addClass("topic-recv", RecvTopic.class, "topic recv example");
+            pd.addClass("test-batch-send", TestBatchSend.class, "test batch send example");
+            pd.addClass("test-pool-recv", TestPoolRecv.class, "test thread pool recv example");
 
             exitCode = pd.run(args, 0);
         } catch (Throwable e) {
